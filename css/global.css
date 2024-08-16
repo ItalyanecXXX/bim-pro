@@ -1,0 +1,54 @@
+:root {
+    --font-family: "Roboto", "Arial", sans-serif;
+    --second-family: "Bebas Neue", sans-serif;
+    --third-family: "Rubik", sans-serif;
+    --orange-acent: #e74214;
+    --orange: #ea4c14;
+    --bg-light: #2e2e31;
+    --bg-dark: #222224;
+    --transition: all .4s;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 100px;
+}
+
+.body {
+    font-family: var(--font-family);
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 1.5;
+    background: var(--bg-dark);
+    color: #efefef;
+}
+
+.body--opend-menu {
+    overflow: hidden;
+}
+.container {
+    max-width: 1396px;
+    margin: 0 auto;
+    padding: 0 15px;
+    height: 100%;
+}
+
+.wraper {
+    min-height: 100%;
+    width: 100%;
+    overflow: hidden;
+    display: inline-flex;
+    flex-direction: column;
+}
+
+.main {
+    flex-grow: 1;
+}
+
+.hero {
+}
+.main-hero {
+    padding: 186px 0 84px;
+}
+
+.batton {}

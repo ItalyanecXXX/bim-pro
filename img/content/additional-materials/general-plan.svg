@@ -1,0 +1,14 @@
+<svg width="44" height="36" viewBox="0 0 44 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+<rect x="1" y="1" width="42.1971" height="33.2774" stroke="#F5F5F5" stroke-width="1.5" stroke-linejoin="round"/>
+<rect x="35.9927" y="15.4087" width="7.20438" height="3.08759" stroke="#F5F5F5" stroke-width="1.5" stroke-linejoin="round"/>
+<rect x="26.7299" y="15.4087" width="6.86131" height="3.08759" stroke="#F5F5F5" stroke-width="1.5" stroke-linejoin="round"/>
+<rect x="20.5547" y="27.416" width="6.86131" height="3.08759" transform="rotate(90 20.5547 27.416)" stroke="#F5F5F5" stroke-width="1.5" stroke-linejoin="round"/>
+<rect x="8.8905" y="16.438" width="6.86131" height="3.08759" transform="rotate(90 8.8905 16.438)" stroke="#F5F5F5" stroke-width="1.5" stroke-linejoin="round"/>
+<rect x="8.8905" y="6.48901" width="6.86131" height="3.08759" transform="rotate(90 8.8905 6.48901)" stroke="#F5F5F5" stroke-width="1.5" stroke-linejoin="round"/>
+<rect x="8.8905" y="1" width="5.48905" height="3.08759" transform="rotate(90 8.8905 1)" stroke="#F5F5F5" stroke-width="1.5" stroke-linejoin="round"/>
+<rect x="5.80292" y="23.2993" width="4.80292" height="3.08759" transform="rotate(-180 5.80292 23.2993)" stroke="#F5F5F5" stroke-width="1.5" stroke-linejoin="round"/>
+<rect x="40.1095" y="21.927" width="4.11679" height="4.11679" transform="rotate(90 40.1095 21.927)" stroke="#F5F5F5" stroke-width="1.5" stroke-linejoin="round"/>
+<rect x="40.1095" y="28.7883" width="5.48905" height="4.11679" transform="rotate(90 40.1095 28.7883)" stroke="#F5F5F5" stroke-width="1.5" stroke-linejoin="round"/>
+<path d="M11.635 1V21.0438C11.635 23.8052 9.39647 26.0438 6.63504 26.0438H1.17154M11.635 34.2774V33.1022C11.635 30.3408 9.39647 28.1022 6.63504 28.1022H1.17154M15.0657 1V5.09124C15.0657 7.85267 17.3043 10.0912 20.0657 10.0912H43.1971M43.1971 13.1788H20.0657C17.3043 13.1788 15.0657 15.4174 15.0657 18.1788V34.2774" stroke="#F5F5F5" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M22.6131 15.4087L17.4671 20.5547V24.6715H20.5547V21.7554L23.8139 18.4963H26.7299V15.4087H22.6131Z" stroke="#F5F5F5" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
