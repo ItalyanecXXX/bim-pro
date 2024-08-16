@@ -58,7 +58,7 @@
 .heder__nav-link::before {
     content: '';
     position: absolute;
-    bottom: -27px;
+    bottom: -28px;
     transition: var(--transition);
     opacity: 0;
     overflow: hidden;
