@@ -1,0 +1,35 @@
+div {
+    color: green;
+}
+
+.block {
+    color: red;
+}
+
+#id-block {
+    color: blueviolet;
+}
+
+[data-exampie] {
+    color: aqua;
+}
+
+[data-exampie ="voiue2"] {
+    color: rgb(90, 39, 9);
+}
+
+.block3, .block4, .block5 {
+    color: #a6e93a;
+}
+
+div.blue-block {
+    color: blue;
+}
+
+div .orange {
+    color: rgb(235, 155, 34);
+}
+
+.parent>.child {
+    color: rgb(165, 60, 125);
+}
