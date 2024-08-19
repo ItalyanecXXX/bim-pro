@@ -26,6 +26,7 @@ html {
 .body--opend-menu {
     overflow: hidden;
 }
+
 .container {
     max-width: 1396px;
     margin: 0 auto;
@@ -45,10 +46,58 @@ html {
     flex-grow: 1;
 }
 
-.hero {
-}
 .main-hero {
     padding: 186px 0 84px;
 }
 
+.main__services {
+    padding-bottom: 146px;
+}
+
+.main__motivation {
+    margin-bottom: 150px;
+}
 .batton {}
+
+.title {
+    font-family: var(--second-family);
+    font-weight: 700;
+    font-size: 50px;
+    line-height: 1;
+    letter-spacing: 0.01em;
+    color: #efefef;
+}
+
+/* ========================== */
+[data-title] {
+    position: relative;
+    cursor: help;
+
+}
+
+[data-title]::after {
+    content: attr(data-title);
+    position: absolute;
+    left: -132px;
+    top: 72px;
+    opacity: 0;
+    transition: 0.5s;
+    pointer-events: none;
+    border-radius: 0 6px 6px 6px;
+    width: 270px;
+    max-height: 101px;
+    background: rgba(0, 0, 0, 0.8);
+    padding: 0.7em;
+    font-family: var(--font-family);
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 1.43;
+    letter-spacing: 0.01em;
+    color: #9da0a3;
+    z-index: 2;
+}
+
+[data-title]:hover::after {
+    opacity: 1;
+
+}

@@ -19,31 +19,49 @@
     }
 
 
-// Слайды главная
-new Swiper('.hero__swiper', {
-    // Optional parameters
-    slidesPerView: 1,
-    spaceBetween: 21,
-    centeredSlides: true,
+    // Слайды главная
+    new Swiper('.hero__swiper', {
+        // Optional parameters
+        slidesPerView: 1,
+        spaceBetween: 21,
+        centeredSlides: true,
 
-    navigation: {
-        nextEl: '.hero__next',
-        prevEl: '.hero__prev',
-    },
-
-    scrollbar: {
-        el: '.swiper-scrollbar',
-        draggable: true,
-    },
-
-    breakpoints: {
-        901: {
-            centeredSlides: false,
+        navigation: {
+            nextEl: '.hero__next',
+            prevEl: '.hero__prev',
         },
 
-    
+        scrollbar: {
+            el: '.swiper-scrollbar',
+            draggable: true,
+        },
+
+        breakpoints: {
+            901: {
+                centeredSlides: false,
+            },
+        }
+
+    });
+
+    // анимация числа
+    const time = 5000;
+    const step = 1;
+
+    function outNum(num, elem) {
+        let e = document.querySelector("#out");
+        n = 0;
+        let t = Math.round(time / (num / step));
+        let interval = setInterval(() => {
+            n = n + step;
+            if (n == num) {              
+                n = 0;
+            }
+            e.innerHTML = n;
+        }, t);
     }
-});
+
+    outNum(20, "#out");
 
 
 
