@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .body--opend-modal {
+            overflow: hidden;
+        }
+
+        .modal {
+            z-index: 10;
+            position: fixed;
+            inset: 0;
+            background: #00000070;
+            padding: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            visibility: hidden;
+            transition: all .6s;
+        }
+
+        .modal--opend {
+            opacity: 1;
+            visibility: visible;
+        }
+
+
+        .modal__windom {
+            position: relative;
+            background: var(--fonovyy-svetlyy);
+            border-radius: var(--border-radius);
+            padding: 0 60px 60px 60px;
+            max-width: 428px;
+        }
+
+        .modal__img {
+            margin: -65px 48px 15px 12px;
+            max-width: 100%
+        }
+
+        .modal__img img {
+            max-width: 100%
+        }
+
+        .modal__close {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            cursor: pointer;
+        }
+
+        .modal__close path,
+        rect {
+            stroke: #e1d9e1;
+            transition: var(--transition);
+        }
+
+        .modal__close:hover path,
+        .modal__close:hover rect {
+            stroke: var(--inputy);
+        }
+
+        .modal__title {
+            font-size: 42px;
+            line-height: .9;
+            margin-bottom: 10px;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <div class="modal">
+        <div class="modal__windom">
+            <div class="modal__img">
+                <img src="img/decor/cupcakes-modals.png" alt="#">
+            </div>
+            <div class="modal__close">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect x="0.75" y="0.75" width="22.5" height="22.5" rx="11.25" stroke="#E1D9E1" stroke-width="1.5" />
+                    <path
+                        d="M6.75781 17.2433L12.0008 12.0003L17.2438 17.2433M17.2438 6.75732L11.9998 12.0003L6.75781 6.75732"
+                        stroke="#E1D9E1" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+            </div>
+            <h3 class="modal__title title">
+                Удиви своих близких вкусными капкейками
+            </h3>
+            <p class="text">
+                Оставь свой e-mail, и мы вышлем рецепт на почту
+            </p>
+            <form class="modal__form">
+                <label class="modal__form-label">
+                    <input class="modal__form-input" type="text" placeholder="E-mail">
+                    <span>Введите e-mail</span>
+                </label>
+                <button class="button button--modal" type="submit">Получить подарок</button>
+            </form>
+        </div>
+    </div>
+
+
+    <script>
+        // модалка
+        const btnOpen = document.querySelector('.about__img-button')
+        const modal = document.querySelector('.modal')
+        const bodyFixed = document.body
+
+
+        const modalClose = () => {
+            modal.classList.remove('modal--opend')
+            bodyFixed.classList.remove('body--opend-modal')
+        }
+
+        const modalOpen = () => {
+            modal.classList.add('modal--opend')
+            bodyFixed.classList.add('body--opend-modal')
+        }
+
+
+        btnOpen.addEventListener('click', modalOpen)
+
+        modal.addEventListener('click', event => {
+            event.preventDefault()
+            const target = event.target
+            if (target.closest('.modal__close') || target.classList.contains('modal--opend')) {
+                modalClose()
+            } else {
+                return
+            }
+        })
+        document.addEventListener('keydown', event => {
+            if (event.code === 'Escape' && modal.classList.contains('modal--opend')) {
+                modalClose()
+            }
+        })
+    </script>
+</body>
+
+</html>

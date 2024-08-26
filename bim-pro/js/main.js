@@ -130,6 +130,107 @@
         });
     });
 
+// Инициализация всех Swiper контейнеров
+const swipers = [];
+document.querySelectorAll('.complex-development__swiper').forEach(container => {
+    const swiper = new Swiper(container, {
+        slidesPerView: 1,
+        spaceBetween: 21,
+        centeredSlides: true,
+
+        navigation: {
+            nextEl: container.querySelector('.complex-development__next'),
+            prevEl: container.querySelector('.complex-development__prev'),
+        },
+
+        scrollbar: {
+            el: container.querySelector('.swiper-scrollbar'),
+            draggable: true,
+        },
+    });
+
+    swipers.push(swiper);
+});
+
+// Обработчик события для переключения табов аккордеона
+const tabControlsSwap = document.querySelector('.tab-controls-Swap');
+
+tabControlsSwap.addEventListener('click', toggleTabSwap);
+
+function toggleTabSwap(e) {
+    const tabControlSwap = e.target.closest('.tab-controls__link-Swap');
+
+    if (!tabControlSwap) return;
+    e.preventDefault();
+    if (tabControlSwap.classList.contains('tab-Swap--active')) return;
+
+    const tapContentID = tabControlSwap.getAttribute('href');
+    const tabContent = document.querySelector(tapContentID);
+    const activeControl = document.querySelector('.tab-Swap--active');
+    const activeContent = document.querySelector('.tab-content-Swap--show');
+
+    if (activeControl) {
+        activeControl.classList.remove('tab-Swap--active');
+    }
+    if (activeContent) {
+        activeContent.classList.remove('tab-content-Swap--show');
+    }
+
+    tabControlSwap.classList.add('tab-Swap--active');
+    tabContent.classList.add('tab-content-Swap--show');
+
+    // Обновляем Swiper для активного таба
+    const activeSwiperContainer = tabContent.querySelector('.complex-development__swiper');
+    if (activeSwiperContainer) {
+        const activeSwiper = swipers.find(sw => sw.el === activeSwiperContainer);
+        if (activeSwiper && typeof activeSwiper.update === 'function') {
+            activeSwiper.update();
+            if (activeSwiper.scrollbar && typeof activeSwiper.scrollbar.updateSize === 'function') {
+                activeSwiper.scrollbar.updateSize();
+            }
+        }
+    }
+}
+
+
+
+    // модалка
+    const btnOpen = document.querySelectorAll('.complex-development-modal')
+    const modal = document.querySelector('.modal')
+    const bodyFixed = document.body
+
+
+    const modalClose = () => {
+        modal.classList.remove('modal--opend')
+        bodyFixed.classList.remove('body--opend-modal')
+    }
+
+    const modalOpen = () => {
+        modal.classList.add('modal--opend')
+        bodyFixed.classList.add('body--opend-modal')
+    }
+
+
+    btnOpen.forEach(el => {
+        el.addEventListener('click', modalOpen)
+    });
+
+    modal.addEventListener('click', event => {
+        event.preventDefault()
+        const target = event.target
+        if (target.closest('.modal__close') || target.classList.contains('modal--opend')) {
+            modalClose()
+        } else {
+            return
+        }
+    })
+    document.addEventListener('keydown', event => {
+        if (event.code === 'Escape' && modal.classList.contains('modal--opend')) {
+            modalClose()
+        }
+    })
+
+
 
 
 })()
