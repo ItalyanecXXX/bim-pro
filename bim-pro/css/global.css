@@ -299,6 +299,20 @@ div[data-title]:hover::before {
     visibility: hidden;
     transition: all .6s;
 }
+.modal2 {
+    z-index: 10;
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.8);
+
+    padding: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    visibility: hidden;
+    transition: all .6s;
+}
 
 .modal--opend {
     opacity: 1;
@@ -330,8 +344,19 @@ div[data-title]:hover::before {
     right: 20px;
     cursor: pointer;
 }
+.modal2__close {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    cursor: pointer;
+}
 
 .modal__close path,
+rect {
+    stroke: #000;
+    transition: var(--transition);
+}
+.modal2__close path,
 rect {
     stroke: #000;
     transition: var(--transition);
@@ -339,6 +364,10 @@ rect {
 
 .modal__close:hover path,
 .modal__close:hover rect {
+    stroke: var(--orange);
+}
+.modal2__close:hover path,
+.modal2__close:hover rect {
     stroke: var(--orange);
 }
 
@@ -400,9 +429,29 @@ rect {
 
 
 /* ============================ */
+.complex-development__slaider {
+/* min-width: 0; */
+}
 
 .complex-development__swiper {
     position: relative;
+    max-width: 859px;
+    max-height: 1104px;
+}
+.complex-development__wrapper {
+
+}
+.complex-development__slide {
+   
+}
+.complex-development__slide-img {
+    
+}
+.complex-development__slide-img img{
+    width: 100%;
+  
+    object-fit: cover; 
+    object-position: center;
 }
 
 .complex-development__nav-wraper {

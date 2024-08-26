@@ -138,6 +138,13 @@ document.querySelectorAll('.complex-development__swiper').forEach(container => {
         spaceBetween: 21,
         centeredSlides: true,
 
+        effect: 'fade',
+        fadeEffect: {
+            crossFade: true
+        },
+        
+        speed: 600,
+
         navigation: {
             nextEl: container.querySelector('.complex-development__next'),
             prevEl: container.querySelector('.complex-development__prev'),
@@ -310,7 +317,7 @@ function toggleTabSwap4(e) {
     }
 }
 
-    // модалка
+    // модалка 1
     const btnOpen = document.querySelectorAll('.complex-development-modal')
     const modal = document.querySelector('.modal')
     const bodyFixed = document.body
@@ -343,6 +350,78 @@ function toggleTabSwap4(e) {
     document.addEventListener('keydown', event => {
         if (event.code === 'Escape' && modal.classList.contains('modal--opend')) {
             modalClose()
+        }
+    })
+
+
+    // модалка 2
+    const btnOpen2 = document.querySelectorAll('.architectural-modal')
+    const modal2 = document.querySelector('.modal2')
+    
+
+
+    const modalClose2 = () => {
+        modal2.classList.remove('modal--opend')
+        bodyFixed.classList.remove('body--opend-modal')
+    }
+
+    const modalOpen2 = () => {
+        modal2.classList.add('modal--opend')
+        bodyFixed.classList.add('body--opend-modal')
+    }
+
+
+    btnOpen2.forEach(el => {
+        el.addEventListener('click', modalOpen2)
+    });
+
+    modal2.addEventListener('click', event => {
+        event.preventDefault()
+        const target = event.target
+        if (target.closest('.modal2__close') || target.classList.contains('modal--opend')) {
+            modalClose2()
+        } else {
+            return
+        }
+    })
+    document.addEventListener('keydown', event => {
+        if (event.code === 'Escape' && modal.classList.contains('modal--opend')) {
+            modalClose2()
+        }
+    })
+    // модалка 3
+    const btnOpen3 = document.querySelectorAll('.interior-modal')
+    const modal3 = document.querySelector('.modal2')
+    
+
+
+    const modalClose3 = () => {
+        modal3.classList.remove('modal--opend')
+        bodyFixed.classList.remove('body--opend-modal')
+    }
+
+    const modalOpen3 = () => {
+        modal3.classList.add('modal--opend')
+        bodyFixed.classList.add('body--opend-modal')
+    }
+
+
+    btnOpen3.forEach(el => {
+        el.addEventListener('click', modalOpen3)
+    });
+
+    modal3.addEventListener('click', event => {
+        event.preventDefault()
+        const target = event.target
+        if (target.closest('.modal2__close') || target.classList.contains('modal--opend')) {
+            modalClose3()
+        } else {
+            return
+        }
+    })
+    document.addEventListener('keydown', event => {
+        if (event.code === 'Escape' && modal.classList.contains('modal--opend')) {
+            modalClose3()
         }
     })
 
