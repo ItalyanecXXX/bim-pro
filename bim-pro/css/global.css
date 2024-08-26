@@ -261,6 +261,27 @@ div[data-title]:hover::before {
 .tab-content-Swap--show {
     display: block;
 }
+.tab2-content-Swap {
+    display: none;
+}
+
+.tab2-content-Swap--show {
+    display: block;
+}
+.tab3-content-Swap {
+    display: none;
+}
+
+.tab3-content-Swap--show {
+    display: block;
+}
+.tab4-content-Swap {
+    display: none;
+}
+
+.tab4-content-Swap--show {
+    display: block;
+}
 
 /* ====================================== */
 
@@ -429,4 +450,10 @@ div.complex-development__scrollbar.swiper-scrollbar {
     width: 48px;
     border-radius: 0;
 
+}
+
+.complex-development__slaider {
+    max-width: 859px;
+    max-height: 1104px;
+    margin-left: -268px;
 }

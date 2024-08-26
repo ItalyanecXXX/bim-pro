@@ -130,7 +130,7 @@
         });
     });
 
-// Инициализация всех Swiper контейнеров
+// Инициализация всех Swiper контейнеров complex-development
 const swipers = [];
 document.querySelectorAll('.complex-development__swiper').forEach(container => {
     const swiper = new Swiper(container, {
@@ -191,8 +191,124 @@ function toggleTabSwap(e) {
         }
     }
 }
+// Обработчик события для переключения табов 2 аккордеона
+const tabControlsSwap2 = document.querySelector('.tab2-controls-Swap');
 
+tabControlsSwap2.addEventListener('click', toggleTabSwap2);
 
+function toggleTabSwap2(e) {
+    const tabControlSwap = e.target.closest('.tab2-controls__link-Swap');
+
+    if (!tabControlSwap) return;
+    e.preventDefault();
+    if (tabControlSwap.classList.contains('tab2-Swap--active')) return;
+
+    const tapContentID = tabControlSwap.getAttribute('href');
+    const tabContent = document.querySelector(tapContentID);
+    const activeControl = document.querySelector('.tab2-Swap--active');
+    const activeContent = document.querySelector('.tab2-content-Swap--show');
+
+    if (activeControl) {
+        activeControl.classList.remove('tab2-Swap--active');
+    }
+    if (activeContent) {
+        activeContent.classList.remove('tab2-content-Swap--show');
+    }
+
+    tabControlSwap.classList.add('tab2-Swap--active');
+    tabContent.classList.add('tab2-content-Swap--show');
+
+    // Обновляем Swiper для активного таба
+    const activeSwiperContainer = tabContent.querySelector('.complex-development__swiper');
+    if (activeSwiperContainer) {
+        const activeSwiper = swipers.find(sw => sw.el === activeSwiperContainer);
+        if (activeSwiper && typeof activeSwiper.update === 'function') {
+            activeSwiper.update();
+            if (activeSwiper.scrollbar && typeof activeSwiper.scrollbar.updateSize === 'function') {
+                activeSwiper.scrollbar.updateSize();
+            }
+        }
+    }
+}
+
+// Обработчик события для переключения табов 3 аккордеона
+const tabControlsSwap3 = document.querySelector('.tab3-controls-Swap');
+
+tabControlsSwap3.addEventListener('click', toggleTabSwap3);
+
+function toggleTabSwap3(e) {
+    const tabControlSwap = e.target.closest('.tab3-controls__link-Swap');
+
+    if (!tabControlSwap) return;
+    e.preventDefault();
+    if (tabControlSwap.classList.contains('tab3-Swap--active')) return;
+
+    const tapContentID = tabControlSwap.getAttribute('href');
+    const tabContent = document.querySelector(tapContentID);
+    const activeControl = document.querySelector('.tab3-Swap--active');
+    const activeContent = document.querySelector('.tab3-content-Swap--show');
+
+    if (activeControl) {
+        activeControl.classList.remove('tab3-Swap--active');
+    }
+    if (activeContent) {
+        activeContent.classList.remove('tab3-content-Swap--show');
+    }
+
+    tabControlSwap.classList.add('tab3-Swap--active');
+    tabContent.classList.add('tab3-content-Swap--show');
+
+    // Обновляем Swiper для активного таба
+    const activeSwiperContainer = tabContent.querySelector('.complex-development__swiper');
+    if (activeSwiperContainer) {
+        const activeSwiper = swipers.find(sw => sw.el === activeSwiperContainer);
+        if (activeSwiper && typeof activeSwiper.update === 'function') {
+            activeSwiper.update();
+            if (activeSwiper.scrollbar && typeof activeSwiper.scrollbar.updateSize === 'function') {
+                activeSwiper.scrollbar.updateSize();
+            }
+        }
+    }
+}
+// Обработчик события для переключения табов 3 аккордеона
+const tabControlsSwap4 = document.querySelector('.tab4-controls-Swap');
+
+tabControlsSwap4.addEventListener('click', toggleTabSwap4);
+
+function toggleTabSwap4(e) {
+    const tabControlSwap = e.target.closest('.tab4-controls__link-Swap');
+
+    if (!tabControlSwap) return;
+    e.preventDefault();
+    if (tabControlSwap.classList.contains('tab4-Swap--active')) return;
+
+    const tapContentID = tabControlSwap.getAttribute('href');
+    const tabContent = document.querySelector(tapContentID);
+    const activeControl = document.querySelector('.tab4-Swap--active');
+    const activeContent = document.querySelector('.tab4-content-Swap--show');
+
+    if (activeControl) {
+        activeControl.classList.remove('tab4-Swap--active');
+    }
+    if (activeContent) {
+        activeContent.classList.remove('tab4-content-Swap--show');
+    }
+
+    tabControlSwap.classList.add('tab4-Swap--active');
+    tabContent.classList.add('tab4-content-Swap--show');
+
+    // Обновляем Swiper для активного таба
+    const activeSwiperContainer = tabContent.querySelector('.complex-development__swiper');
+    if (activeSwiperContainer) {
+        const activeSwiper = swipers.find(sw => sw.el === activeSwiperContainer);
+        if (activeSwiper && typeof activeSwiper.update === 'function') {
+            activeSwiper.update();
+            if (activeSwiper.scrollbar && typeof activeSwiper.scrollbar.updateSize === 'function') {
+                activeSwiper.scrollbar.updateSize();
+            }
+        }
+    }
+}
 
     // модалка
     const btnOpen = document.querySelectorAll('.complex-development-modal')
