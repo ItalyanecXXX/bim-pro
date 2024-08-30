@@ -282,6 +282,20 @@ div[data-title]:hover::before {
 .tab4-content-Swap--show {
     display: block;
 }
+.tab5-content-Swap {
+    display: none;
+}
+
+.tab5-content-Swap--show {
+    display: block;
+}
+.tab6-content-Swap {
+    display: none;
+}
+
+.tab6-content-Swap--show {
+    display: block;
+}
 
 /* ====================================== */
 
