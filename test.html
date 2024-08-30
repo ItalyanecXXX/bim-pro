@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tag Filter Example</title>
+    <style>
+        .item {
+            padding: 10px;
+            margin: 5px;
+            border: 1px solid #ddd;
+        }
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+
+<h2>Filter by Tag</h2>
+
+<div>
+    <label><input type="checkbox" class="filter-checkbox" value="tag1"> Tag 1</label>
+    <label><input type="checkbox" class="filter-checkbox" value="tag2"> Tag 2</label>
+    <label><input type="checkbox" class="filter-checkbox" value="tag3"> Tag 3</label>
+</div>
+
+<div class="item tag1">Item with Tag 1</div>
+<div class="item tag2">Item with Tag 2</div>
+<div class="item tag3">Item with Tag 3</div>
+<div class="item tag1 tag2">Item with Tag 1 and Tag 2</div>
+<div class="item tag1 tag3">Item with Tag 1 and Tag 3</div>
+<div class="item tag2 tag3">Item with Tag 2 and Tag 3</div>
+
+<script>
+    const checkboxes = document.querySelectorAll('.filter-checkbox');
+    const items = document.querySelectorAll('.item');
+
+    checkboxes.forEach(checkbox => {
+        checkbox.addEventListener('change', () => {
+            filterItems();
+        });
+    });
+
+    function filterItems() {
+        const activeFilters = Array.from(checkboxes)
+                                   .filter(checkbox => checkbox.checked)
+                                   .map(checkbox => checkbox.value);
+
+        items.forEach(item => {
+            const itemTags = Array.from(item.classList);
+            const isVisible = activeFilters.length === 0 || activeFilters.some(filter => itemTags.includes(filter));
+            item.classList.toggle('hidden', !isVisible);
+        });
+    }
+</script>
+
+</body>
+</html>
