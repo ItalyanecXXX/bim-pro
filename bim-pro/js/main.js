@@ -398,27 +398,6 @@
 
     // =======================================================
     // фильтр по тегам
-    // const checkboxes = document.querySelectorAll('.filter-checkbox');
-    // const items = document.querySelectorAll('.project__content-item');
-
-    // checkboxes.forEach(checkbox => {
-    //     checkbox.addEventListener('change', () => {
-    //         filterItems();
-    //     });
-    // });
-
-    // function filterItems() {
-    //     const activeFilters = Array.from(checkboxes)
-    //                                .filter(checkbox => checkbox.checked)
-    //                                .map(checkbox => checkbox.value);
-
-    //     items.forEach(item => {
-    //         const itemTags = Array.from(item.classList);
-    //         const isVisible = activeFilters.length === 0 || activeFilters.some(filter => itemTags.includes(filter));
-    //         item.classList.toggle('hide', !isVisible);
-    //     });
-    // }
-
 
     const checkboxes = document.querySelectorAll('.filter-checkbox');
     const items = document.querySelectorAll('.project__content-item');
@@ -453,7 +432,83 @@
         filterItems(); // Сбрасываем фильтрацию
     }
 
+// ==================================================
+// таб
+const tabControlsguar = document.querySelector('.tab-controls-guar')
 
+tabControlsguar.addEventListener('click', toggleTabguar)
+
+function toggleTabguar(e) {
+    const tabControl = e.target.closest('.tab-controls-guar__link')
+
+    if (!tabControl) return
+    e.preventDefault()
+    if (tabControl.classList.contains('tab-controls-guar__link--active')) return
+
+    const tapContentID = tabControl.getAttribute('href')
+    const tabContent = document.querySelector(tapContentID)
+    const activeControl = document.querySelector('.tab-controls-guar__link--active')
+    const activeContent = document.querySelector('.tab-content-guar--show')
+
+    if (activeControl) {
+        activeControl.classList.remove('tab-controls-guar__link--active')
+    }
+    if (activeContent) {
+        activeContent.classList.remove('tab-content-guar--show')
+    }
+
+    tabControl.classList.add('tab-controls-guar__link--active')
+    tabContent.classList.add('tab-content-guar--show')
+
+}
+
+
+// ===============================================
+// Слайды сми
+new Swiper('.media__swiper', {
+    // Optional parameters
+    slidesPerView: 4,
+    spaceBetween: 30,
+    
+
+    navigation: {
+        nextEl: '.media__next',
+        prevEl: '.media__pred',
+    },
+
+    
+
+    pagination: {
+        type: 'fraction',
+        el: '.media__pagination',
+
+    },
+
+
+});
+
+// Слайды news
+new Swiper('.news__swiper', {
+    // Optional parameters
+    slidesPerView: 4,
+    spaceBetween: 30,
+    
+
+    navigation: {
+        nextEl: '.news__next',
+        prevEl: '.news__pred',
+    },
+
+    
+
+    pagination: {
+        type: 'fraction',
+        el: '.news__pagination',
+
+    },
+
+
+});
     // ==========================================================
     // модалка 1
     const btnOpen = document.querySelectorAll('.complex-development-modal')
