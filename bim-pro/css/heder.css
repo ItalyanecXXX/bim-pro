@@ -9,10 +9,7 @@
 }
 
 
-.container {}
-
 .heder__inner {
-
     position: sticky;
     padding: 16px 0;
     display: flex;
@@ -27,12 +24,10 @@
     align-items: end;
     gap: 75px;
     padding: 10px 0;
-
 }
 
 .heder__logo {
     display: block;
-
 }
 
 .heder__nav-list {
@@ -41,10 +36,7 @@
     font-size: 20px;
     line-height: 1.35;
     letter-spacing: 0.01em;
-
 }
-
-.heder__list-item {}
 
 .heder__nav-link {
     padding: 5px 0;
@@ -62,16 +54,13 @@
     transition: var(--transition);
     opacity: 0;
     overflow: hidden;
-    
     width: 0;
     height: 0;
-    background: var(--orange);
-    
+    background: var(--orange);  
 }
 
 .heder__nav-link:hover::before {
-    opacity: 1;
-    
+    opacity: 1;  
     overflow: visible;
     height: 2px;
     width: 100px;
@@ -112,8 +101,6 @@ cursor: pointer;
 .heder__menu-link:hover {
     color: var(--orange);
 }
-
-
 
 .heder__info {
     display: flex;
