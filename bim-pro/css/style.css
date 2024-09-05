@@ -3683,6 +3683,7 @@ iframe {
     .partners__wraper {
         overflow-x: scroll;
         justify-content: normal;
+        padding-bottom: 15px;
     }
 
     .partners__wraper::-webkit-scrollbar {
