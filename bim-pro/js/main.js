@@ -5,7 +5,7 @@
     function burgerInit(e) {
 
         const burgerIcon = e.target.closest('.burger-icon')
-        const burgerNavLink = e.target.closest('.header__nav-link')
+        const burgerNavLink = e.target.closest('.heder__nav-link')
 
         if (!burgerIcon && !burgerNavLink) return
         if (document.documentElement.clientWidth > 900) return
@@ -432,6 +432,49 @@
         filterItems(); // Сбрасываем фильтрацию
     }
 
+
+
+    const filtersLists = document.querySelector('.project__button-nav');
+        filtersLists.addEventListener('click', (e) => {
+
+            const accordionContent = document.querySelector('.project__teg')           
+            const accordionControl = e.target.closest('.project__button-nav');
+            
+            if (!accordionControl) return
+            e.preventDefault()            
+            if (filtersLists.classList.contains('project__button-nav--opened')) {
+                accordionContent.style.maxHeight = null;
+                filtersLists.classList.remove('project__button-nav--opened');
+                
+            } else {
+                filtersLists.classList.add('project__button-nav--opened');
+            }
+
+            if (filtersLists.classList.contains('project__button-nav--opened')) {
+                accordionContent.style.maxHeight = accordionContent.scrollHeight + 'px';
+
+            } else {
+                accordionContent.style.maxHeight = null;
+            }
+        });
+   
+
+// ====================================================
+
+const controlMobil = document.querySelector('.tab-controls-guar__link--active')
+
+controlMobil.addEventListener ('click', (ev) => {
+    const control = ev.target.closest('.tab-controls-guar__link--active')
+    if (document.documentElement.clientWidth > 450) return
+    if (!control) return
+
+    const content = document.querySelector('.description__content-mobil')
+
+    content.classList.toggle('description__content-mobil-opend')
+})
+
+
+
 // ==================================================
 // таб
 const tabControlsguar = document.querySelector('.tab-controls-guar')
@@ -465,7 +508,7 @@ function toggleTabguar(e) {
 
 // ===============================================
 // Слайды сми
-new Swiper('.media__swiper', {
+const mediaSwiper = new Swiper('.media__swiper', {
     // Optional parameters
     slidesPerView: 4,
     spaceBetween: 30,
@@ -479,16 +522,26 @@ new Swiper('.media__swiper', {
     
 
     pagination: {
-        type: 'fraction',
         el: '.media__pagination',
 
     },
 
-
 });
+// фракции сми
+let myMediaAll = document.querySelector('.media__total');
+let myMediaCurret = document.querySelector('.media__current');
 
+myMediaAll.innerHTML = mediaSwiper.slides.length;
+
+mediaSwiper.on('slideChange', function() {
+    let currentSlide = ++mediaSwiper.realIndex;
+    myMediaCurret.innerHTML = currentSlide;
+})
+
+
+// ==========================================
 // Слайды news
-new Swiper('.news__swiper', {
+const newsSwiper = new Swiper('.news__swiper', {
     // Optional parameters
     slidesPerView: 4,
     spaceBetween: 30,
@@ -501,14 +554,24 @@ new Swiper('.news__swiper', {
 
     
 
-    pagination: {
-        type: 'fraction',
+    pagination: {      
         el: '.news__pagination',
 
     },
 
 
 });
+
+// фракции сми
+let myNewsAll = document.querySelector('.news__total');
+let myNewsCurret = document.querySelector('.news__current');
+
+myNewsAll.innerHTML = newsSwiper.slides.length;
+
+newsSwiper.on('slideChange', function() {
+    let currentSlide = ++newsSwiper.realIndex;
+    myNewsCurret.innerHTML = currentSlide;
+})
     // ==========================================================
     // модалка 1
     const btnOpen = document.querySelectorAll('.complex-development-modal')

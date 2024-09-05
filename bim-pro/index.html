@@ -16,7 +16,12 @@
                 <div class="heder__inner">
                     <nav class="heder__nav">
                         <a class="heder__logo" href="/">
-                            <img src="img/logo/logo.svg" alt="Логотип компании">
+
+                            <picture>
+                                <source media="(max-width: 450px)" srcset="img/logo/logo-mini2.svg">
+                                <source media="(max-width: 900px)" srcset="img/logo/logo-mini1.svg">
+                                <img src="img/logo/logo.svg" alt="Логотип компании">
+                            </picture>
                         </a>
                         <ul class="heder__nav-list">
                             <li class="heder__nav-item heder__menu">
@@ -1298,12 +1303,10 @@
                         <div class="complex-development__slaider">
                             <div class="tab5-content-Swap tab5-content-Swap--show" id="tab12">
                                 <div>
-                                    <iframe 
-                                        allow="xr-spatial-tracking; gyroscope; accelerometer; fullscreen"
-                                        
+                                    <iframe allow="xr-spatial-tracking; gyroscope; accelerometer; fullscreen"
                                         src="https://kuula.co/share/collection/7v2JJ?logo=1&info=1&fs=0&vr=1&zoom=1&sd=1&initload=0&autorotate=0.18&thumbs=1&inst=ru">
                                     </iframe>
-                                    
+
                                 </div>
                             </div>
                             <div class="tab5-content-Swap" id="tab13">
@@ -1987,6 +1990,17 @@
                     <div class="project__inner">
                         <h3 class="project__title">Какие проекты мы уже реализовали?</h3>
                         <div class="project__wraper">
+                            <a class="project__button-nav" href="#">
+                                <svg width="10" height="16" viewBox="0 0 10 16" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <line x1="9.29289" y1="8.70711" x2="1.29289" y2="0.707107" stroke="white"
+                                        stroke-width="2" />
+                                    <line y1="-1" x2="11.3137" y2="-1"
+                                        transform="matrix(-0.707107 0.707107 0.707107 0.707107 10 8)" stroke="white"
+                                        stroke-width="2" />
+                                </svg>
+                                Фильтр
+                            </a>
                             <div class="project__teg">
                                 <input type="checkbox" id="tag1" class="filter-checkbox" value="tag1">
                                 <label for="tag1" class="filter-label">#архитектура</label>
@@ -2008,8 +2022,8 @@
                                 <label for="tag9" class="filter-label">#промышленные объекты</label>
                                 <input type="checkbox" id="tag10" class="filter-checkbox" value="tag10">
                                 <label for="tag10" class="filter-label">#дополнительные материалы</label>
-                                <button class="reset-button" id="reset-filters">Сбросить фильтр</button>
                             </div>
+                            <button class="reset-button" id="reset-filters">Сбросить фильтр</button>
                             <div class="project__content">
                                 <ul class="project__content-list">
                                     <li class="project__content-item tag-groo tag3 tag4">
@@ -2290,6 +2304,33 @@
                                     </a>
                                 </li>
 
+                            </ul>
+                        </div>
+                        <div class="description__content-mobil description__content-mobil-opend">
+                            <ul class="description__content-mobil-list">
+                                <li class="description__content-mobil-item">
+                                    <p>Мы заинтересованы в взаимовыгодных рабочих отношениях с нашими клиентами и в том,
+                                        чтобы довести любой проект до завершения. </p>
+                                    <p class="description__content-mobil-acent">Изменения и корректировки могут
+                                        вноситься на любой стадии проекта, но в разумных пределах, обычно не более 2-3
+                                        раз. Стоимость этих корректировок включена в общую стоимость работ. Радикальные
+                                        изменений, такие как изменение несущей конструкции здания, перепланировка
+                                        основных помещений, полная смена концепции интерьера в стоимость не входят и
+                                        оплачиваются дополнительно.
+                                    </p>
+                                </li>
+                                <li class="description__content-mobil-item">
+                                    <p>Передаваемое вами ТЗ должно быть, по возможности, полным и подробным, чтобы мы
+                                        могли максимально точно выполнить поставленную задачу.
+                                    </p>
+                                </li>
+                                <li class="description__content-mobil-item">
+                                    <p>Нам настолько нравятся наши работы, что мы просто не можем не поделиться ими,
+                                        поэтому по завершению проекта мы обычно размещаем его в нашем портфолио на
+                                        сайте, со ссылкой на заказчика.</p>
+                                    <p class="description__content-mobil-acent">Если вам требуется конфиденциальность,
+                                        это нужно обозначить заранее.</p>
+                                </li>
                             </ul>
                         </div>
                         <div class="description__content">
@@ -3074,7 +3115,7 @@
                                             <path fill-rule="evenodd" clip-rule="evenodd"
                                                 d="M146.06 17.8125H160.077V31.9006H149.331L148.28 32.0162L147.344 32.3649L146.41 32.9465L145.709 33.7634L145.239 34.8111L144.891 35.9746L144.773 37.0225V53.4375H130.635V33.9944L130.755 32.7155L131.104 30.7353L131.688 28.9902L132.506 27.1256L133.675 24.9144L135.309 22.8186L137.18 21.0735L139.165 19.7925L140.919 18.8604L142.672 18.2786L145.359 17.8125H146.06Z"
                                                 fill="#EA4C14" />
-                                        </g>                                   
+                                        </g>
                                     </svg>
                                 </a>
                             </li>
@@ -3430,7 +3471,7 @@
                                             <path fill-rule="evenodd" clip-rule="evenodd"
                                                 d="M146.06 17.8125H160.077V31.9006H149.331L148.28 32.0162L147.344 32.3649L146.41 32.9465L145.709 33.7634L145.239 34.8111L144.891 35.9746L144.773 37.0225V53.4375H130.635V33.9944L130.755 32.7155L131.104 30.7353L131.688 28.9902L132.506 27.1256L133.675 24.9144L135.309 22.8186L137.18 21.0735L139.165 19.7925L140.919 18.8604L142.672 18.2786L145.359 17.8125H146.06Z"
                                                 fill="#EA4C14" />
-                                        </g>                                       
+                                        </g>
                                     </svg>
                                 </a>
                             </li>
@@ -3572,6 +3613,11 @@
                     </div>
                     <div class="media__wraper">
                         <div class="media__pagination swiper-pagination"></div>
+                        <div class="media__fraction">
+                            <div class="media__current">1</div>
+                            <div class="media__sepparator">/</div>
+                            <div class="media__total">1</div>
+                        </div>
                     </div>
                 </div>
             </section>
@@ -3737,16 +3783,38 @@
                         </div>
                     </div>
                     <div class="news__wraper">
+
+                        <div class="news__fraction">
+                            <div class="news__current">1</div>
+                            <div class="news__sepparator">/</div>
+                            <div class="news__total">1</div>
+                        </div>
                         <div class="news__pagination swiper-pagination"></div>
                     </div>
                 </div>
             </section>
             <section class="calculation main_calculation">
                 <div class="container">
-                    <div class="news__wraper">
-                        <h2 class="news__title">получите расчет стоимости вашего проекта в день заявки</h2>
+                    <div class="calculation__decstop">
+                        <div class="news__wraper">
+                            <h2 class="news__title">получите расчет стоимости вашего проекта в день заявки</h2>
+                        </div>
+                        <a class="news__button button" href="">Оставить заявку</a>
                     </div>
-                    <a class="news__button button" href="">Оставить заявку</a>
+                    <div class="calculation__mobail">
+                        <div class="calculation__mobail-iner">
+                            <h4 class="calculation__mobail-title">Оставьте заявку на звонок</h4>
+                            <div class="calculation__mobail-wrapper">
+                                <input type="text" placeholder="Имя">
+                                <input type="text" placeholder="Телефон">
+                                <a class="calculation__mobail-button" href="">Получить консультацию</a>
+                                <p class="calculation__mobail-text">Нажав на кнопку, я соглашаюсь
+                                    на обработку
+                                    <span class="calculation__mobail-textAc">персональных данных</span>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </section>
         </main>
@@ -3789,7 +3857,7 @@
                                 <div class="footer__info">
                                     <div class="footer__info-num">
                                         <a href="tel:+78123301040">+7 812 330 10 40</a>
-                                        <a href="mialto:project@bimpro.ru">project@bimpro.ru</a>
+                                        <a href="mailto:project@bimpro.ru">project@bimpro.ru</a>
                                     </div>
                                     <div class="footer__info-chart">
                                         <span>ПН-ПТ 9:00 — 18:00</span>

@@ -9,6 +9,7 @@
     --transition: all .4s;
 }
 
+
 html {
     scroll-behavior: smooth;
     scroll-padding-top: 100px;
@@ -500,6 +501,10 @@ rect {
 .complex-development__prev,
 .complex-development__next {
     background: transparent;
+}
+.complex-development__prev.swiper-button-disabled line,
+.complex-development__next.swiper-button-disabled line {
+    stroke: #fff;
 }
 
 
